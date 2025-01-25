@@ -1,0 +1,1 @@
+[data-type="expandoAccordion"]{overflow: hidden}[data-type="expandoAccordion"] .forceAccordionOpen{pointer-events: none}@media (min-width: 48em){[data-type="expandoAccordion"] > summary{float: left}[data-type="expandoAccordion"] > div{overflow: hidden}@supports (display: flow-root){[data-type="expandoAccordion"] > div{display: flow-root;overflow: visible}}}
