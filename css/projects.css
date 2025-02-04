@@ -1,0 +1,55 @@
+/* Container for all cards */
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ensures cards fill available space evenly */
+    gap: 10px; /* Adjust spacing between cards */
+    padding: 20px; /* Adds padding around the container */
+    margin: 0 auto;
+    max-width: 80%; /* Allow container to take up more space on the screen */
+}
+
+/* Individual project card */
+.project {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(30% - 20px); /* Cards take up ~30% of the container width, minus spacing */
+    max-width: 400px; /* Optional: Sets an upper limit for very large screens */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Ensure images and content scale properly */
+.project-image {
+    width: 100%;
+    height: 250px; /* Increase the image height */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Project title */
+.project-header {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Project description */
+.project-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+div h1#Header {
+    font-size: 500%;
+    text-align: center;
+    margin-top: 5%;
+    padding: 0;
+}
+
+.project-list {
+    text-align: left;
+}
