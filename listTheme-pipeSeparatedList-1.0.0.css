@@ -1,1 +1,0 @@
-.pipeSeparatedListTheme li + li > p:before,.pipeSeparatedListTheme li + li > span:before{display: inline-block;content: "";margin-right: 1.1111rem;margin-left: 1.1111rem;border-right: 2px solid white;height: calc(1em - 1px);vertical-align: sub;pointer-events: none}
