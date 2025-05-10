@@ -1,0 +1,35 @@
+New Flyer: Xcelsior
+BRUG Industries, a talented bus modelling group, has partnered with P2P Studios to create the most realistic Xcelsior on the Roblox platform. This bus will be operated in Ro-Translink, as well as BRUG's brand new MBTA!
+
+---
+
+New Flyer: LFR
+One of the first P2P Projects, the articulated LFR is a collaboration between Suburban, the owner of Halifax Transit, and P2P Studios. This model is one of the best on the platform, and will be in service in P2P's Ro-Translink and Halifax Transit.
+
+---
+
+New Flyer: LF
+With the original made by Nike, modified by Suburban, and spec'd by Tzu, this D40LF is a staple in P2P, being the bus that Gen2.1 was developed on. This D40LF will be in-use in Halifax Transit, P2P's Ro-Translink, and P2P's BRT.
+
+---
+
+Project Polaris
+Project Polaris was P2P's first ever project. Anything bus-chassis related falls directly under Polaris - e.g Gen2.1. We have a few buses that currently operate on Gen2.1, the latest update to our chassis: Xcelsior, Orion V, Enviro500, D(E)60LFR, and our D40LF. Project Polaris stands out as one of the only bus chassis systems in North America featuring an interactive system, realistic engine operations, smooth suspension, and more. Gen2.1 is also incredibly stable and optimized.
+
+---
+
+Project Sentinel
+Project Sentinel is arguably the most technologically advanced and revolutionary product P2P has made. Sentinel includes anything "automation" related. AI Passengers fall under this category, and so does our TMAC! The underlying system that powers our TMAC includes:
+
+- A route assembly and managing system that uses purely math and logic to manage stops
+- A latenes system that uses real-life blocks and scheduling
+
+---
+
+Project Odyssey
+Project Odyssey is the codename for P2P's train chassis. While development is on the backburner until Ro-Translink is fully released with buses, development will pick up when we have enough skytrain stations. Project Odyssey will be embedded fully into Ro-Translink, making it a multi-operational game. We will have the following trains, running on a hybrid automatic/manual system:
+
+- Mark 1
+- Mark 2.0/2.5
+- Mark 3
+- Mark 5 (V)

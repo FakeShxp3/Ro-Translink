@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro-Translink | P2P Studios</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/208c66f94a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/Icons/logo.png" alt="Ro-Translink Logo">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="projects.html">Projects</a>
+                <a href="#routes">Routes</a>
+                <a href="https://www.roblox.com/games/93107702761852/RTL-Ro-Translink" target="_blank" class="btn-primary">Play Now</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <img src="assets/images/Icons/Sun.png" alt="Light Mode" id="theme-icon" class="theme-icon">
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="video-container">
+            <img src="assets/images/your-background-image.jpg" alt="Background Image" class="fallback-img">
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Ro-Translink</h1>
+            <p class="reveal-text delay-1">Experience Vancouver's premier 1:1 transit simulator</p>
+            <div class="cta-buttons">
+                <a href="https://www.roblox.com/games/93107702761852/RTL-Ro-Translink" target="_blank" class="btn-primary reveal-text delay-2">Play Now</a>
+                <a href="#routes" class="btn-secondary reveal-text delay-3">Explore Routes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Welcome to Ro-Translink</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Ro-Translink is a meticulous 1:1 recreation of Metro Vancouver's transit system, offering an unparalleled simulation experience on Roblox. Drive buses through accurately modeled streets, operate SkyTrain lines, and interact with realistic passengers in a dynamic, evolving world.</p>
+                    <p>Our game features cutting-edge technology including AI passengers, realistic vehicle physics, and true-to-life scheduling systems that bring the authentic transit experience to life.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="9">0</span>
+                        <span class="stat-label">Bus Routes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="2">0</span>
+                        <span class="stat-label">SkyTrain Lines</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">Stops</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Vehicle Types</span>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Realistic Vehicles</h3>
+                    <p>Drive meticulously modeled buses including the New Flyer Xcelsior, LFR, and LF with realistic physics.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Accurate Map</h3>
+                    <p>Navigate through a 1:1 recreation of Metro Vancouver's streets, neighborhoods and landmarks.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>AI Passengers</h3>
+                    <p>Interact with intelligent AI passengers who follow realistic boarding patterns and schedules.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Section -->
+    <section id="routes" class="routes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transit Routes</h2>
+                <div class="underline"></div>
+                <p>Explore our growing collection of accurate bus and SkyTrain routes</p>
+            </div>
+            
+            <div class="route-categories">
+                <button class="route-tab active" data-category="bus">Bus Routes</button>
+                <button class="route-tab" data-category="train">SkyTrain Lines</button>
+            </div>
+            
+            <div class="routes-container">
+                <div class="route-category active" id="bus-routes">
+                    <div class="route-card" data-route="R4">
+                        <div class="route-number">R4</div>
+                        <div class="route-info">
+                            <h3>RapidBus - 41st Avenue</h3>
+                            <p>UBC to Joyce Station via 41st Avenue</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 8-15 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 17 stops</span>
+                                <span><i class="fas fa-road"></i> 19.1 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="41">
+                        <div class="route-number">41</div>
+                        <div class="route-info">
+                            <h3>Joyce Station / UBC</h3>
+                            <p>UBC to Joyce Station via 41st Avenue</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 15-30 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 49 stops</span>
+                                <span><i class="fas fa-road"></i> 16.8 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="99">
+                        <div class="route-number">99</div>
+                        <div class="route-info">
+                            <h3>Commercial-Broadway / UBC (B-Line)</h3>
+                            <p>UBC to Commercial-Broadway via Broadway</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 3-15 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 13 stops</span>
+                                <span><i class="fas fa-road"></i> 14.3 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="25">
+                        <div class="route-number">25</div>
+                        <div class="route-info">
+                            <h3>Brentwood Station / UBC</h3>
+                            <p>UBC to Brentwood Station via 10th and King Edward</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 8-20 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 63 stops</span>
+                                <span><i class="fas fa-road"></i> 21.6 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="49">
+                        <div class="route-number">49</div>
+                        <div class="route-info">
+                            <h3>Metrotown Station / UBC</h3>
+                            <p>UBC to Metrotown via 49th Avenue</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 5-15 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 61 stops</span>
+                                <span><i class="fas fa-road"></i> 15.3 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="84">
+                        <div class="route-number">84</div>
+                        <div class="route-info">
+                            <h3>VCC-Clark Station / UBC</h3>
+                            <p>UBC to VCC-Clark Station via 4th Avenue and Great Northern Way</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 10-20 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 20 stops</span>
+                                <span><i class="fas fa-road"></i> 12.8 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card" data-route="33">
+                        <div class="route-number">33</div>
+                        <div class="route-info">
+                            <h3>29th Avenue Station / UBC</h3>
+                            <p>UBC to 29th Avenue Station via 16th Avenue and 33rd Avenue</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 12-20 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 46 stops</span>
+                                <span><i class="fas fa-road"></i> 18.2 km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="route-category" id="train-routes">
+                    <div class="route-card train" data-route="millennium">
+                        <div class="route-number train millennium">M</div>
+                        <div class="route-info">
+                            <h3>Millennium Line</h3>
+                            <p>VCC–Clark to Lafarge Lake–Douglas</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 3-8 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 17 stations</span>
+                                <span><i class="fas fa-road"></i> 35.7 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="route-card train" data-route="canada">
+                        <div class="route-number train canada">C</div>
+                        <div class="route-info">
+                            <h3>Canada Line</h3>
+                            <p>Waterfront to Richmond-Brighouse/YVR Airport</p>
+                            <div class="route-details">
+                                <span><i class="fas fa-clock"></i> 3-7 min frequency</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 16 stations</span>
+                                <span><i class="fas fa-road"></i> 19.2 km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Project Preview -->
+    <section class="featured-sections">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-item" id="team-preview">
+                    <div class="featured-content">
+                        <h2>Meet Our Team</h2>
+                        <p>Get to know the talented developers, designers, and transit enthusiasts bringing Ro-Translink to life.</p>
+                        <a href="teams.html" class="btn-secondary">View Team <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="featured-image">
+                        <img src="assets/images/team.jpg" alt="Ro-Translink Team">
+                    </div>
+                </div>
+                
+                <div class="featured-item" id="project-preview">
+                    <div class="featured-image">
+                        <img src="assets/images/Projects/Xcelsior.jpg" alt="Ro-Translink Projects">
+                    </div>
+                    <div class="featured-content">
+                        <h2>Our Projects</h2>
+                        <p>Explore the technical innovations and detailed recreations that make up the Ro-Translink experience.</p>
+                        <a href="projects.html" class="btn-secondary">View Projects <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="assets/images/logo.png" alt="Ro-Translink Logo" class="footer-logo">
+                    <p>Experience Vancouver's premier transit simulator on Roblox.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/p2p" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.instagram.com/p2p_studios/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@P2PRBLX" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="#routes">Routes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/p2p" target="_blank"><i class="fab fa-discord"></i> Join our Discord</a></li>
+                        <li>Join our <a href="https://www.roblox.com/communities/34841485" target="_blank">Roblox group</a>!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 P2P Studios. All Rights Reserved.</p>
+                <p>This is a fan project and is not affiliated with TransLink or any transit authority.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

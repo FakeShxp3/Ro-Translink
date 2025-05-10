@@ -1,0 +1,1764 @@
+:root {
+    --primary: #0060A9;
+    --primary-dark: #004d8a;
+    --primary-light: #0076cf;
+    --secondary: #00A950;
+    --secondary-dark: #008a41;
+    --secondary-light: #00c15d;
+    --accent: #F15A22;
+    --dark: #1c1c1c;
+    --gray-dark: #333;
+    --gray: #666;
+    --gray-light: #aaa;
+    --light: #f8f8f8;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    --border-radius: 8px;
+    
+    /* Background and text colors that will change in dark mode */
+    --bg-color: var(--light);
+    --text-color: var(--dark);
+    --card-bg: var(--white);
+    --nav-scrolled-bg: var(--white);
+    --nav-scrolled-text: var(--dark);
+}
+
+/* Dark mode theme */
+.dark-mode {
+    --bg-color: var(--dark);
+    --text-color: var(--white);
+    --card-bg: var(--gray-dark);
+    --nav-scrolled-bg: var(--gray-dark);
+    --nav-scrolled-text: var(--light);
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --gray-text: rgba(255, 255, 255, 0.7);
+    --section-bg: var(--gray-dark);
+    --card-bg-light: #444;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Additional dark mode adjustments */
+/* bro i fucking hate this */
+.dark-mode .feature-card,
+.dark-mode .project-card,
+.dark-mode .team-member {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .route-card {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .about-text p,
+.dark-mode .featured-content p,
+.dark-mode .member-info p,
+.dark-mode .project-info p,
+.dark-mode .project-info ul li,
+.dark-mode .routes .section-header p {
+    color: var(--gray-text);
+}
+
+/* WHY AM I MAKING DARK MODE ADJUSTMENTS???? */
+
+.dark-mode .stat-item {
+    background-color: var(--card-bg-light);
+    border-bottom: 3px solid var(--primary-light);
+}
+
+.dark-mode .stat-label {
+    color: var(--gray-text);
+}
+
+.dark-mode .routes {
+    background-color: var(--bg-color);
+}
+
+.dark-mode .tech-projects {
+    background-color: var(--bg-color);
+}
+
+.dark-mode .tech-projects .project-features span {
+    background-color: var(--card-bg-light);
+    color: var(--gray-text);
+}
+
+.dark-mode .tech-projects .project-card {
+    background-color: var(--card-bg);
+}
+
+.dark-mode .project-features span {
+    background-color: var(--card-bg-light);
+    color: var(--gray-text);
+}
+
+.dark-mode .cursor {
+    background-color: var(--primary-light);
+}
+
+.dark-mode .cursor-follower {
+    border-color: var(--primary-light);
+}
+
+.dark-mode .feature-card i,
+.dark-mode .future-feature i {
+    color: var(--primary-light);
+}
+
+/* OMG WHY IS THERE SO MUCH FUCKING CODE FOR THIS SHIT */
+
+.dark-mode nav a {
+    color: var(--white);
+}
+
+.dark-mode nav.scrolled a {
+    color: var(--light);
+}
+
+/* Mobile Navigation */
+.dark-mode .nav-links {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.dark-mode .nav-links a {
+    color: var(--white);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Fix remaining sections with background colors */
+.dark-mode .feature-card {
+    background-color: var(--card-bg-light);
+}
+
+.dark-mode .route-tab {
+    color: var(--light);
+}
+
+.dark-mode .route-tab:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .feature-card p {
+    color: var(--gray-text);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white) !important;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+    color: var(--white) !important;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* =========== Custom Cursor (which is bugged as fuck) =========== */
+.cursor {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s;
+    opacity: 0;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+/* =========== Navigation =========== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    z-index: 1000;
+    background-color: transparent;
+    transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.scrolled {
+    background-color: var(--nav-scrolled-bg);
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo img {
+    height: 50px;
+    transition: var(--transition);
+}
+
+nav.scrolled .logo img {
+    height: 40px;
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+nav.scrolled #theme-toggle-btn {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode nav.scrolled #theme-toggle-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* End dark mode toggle */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+nav a {
+    color: var(--nav-scrolled-text);
+    font-weight: 600;
+    position: relative;
+}
+
+nav.scrolled a {
+    color: var(--text-color);
+}
+
+nav a.active, nav a:hover {
+    color: var(--secondary);
+}
+
+nav a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: var(--transition);
+}
+
+nav a.active::after, nav a:hover::after {
+    width: 100%;
+}
+
+nav .btn-primary {
+    padding: 8px 20px;
+    margin-left: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--white);
+}
+
+nav.scrolled .menu-toggle {
+    color: var(--text-color);
+}
+
+/* =========== Hero Section =========== */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.hero .video-container, .page-hero .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero video, .hero .fallback-img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========== Page Hero =========== */
+.page-hero {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+}
+
+.page-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.page-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+}
+
+/* =========== About Section =========== */
+.about {
+    padding: 100px 0;
+    background-color: var(--card-bg);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.underline {
+    height: 4px;
+    width: 80px;
+    background-color: var(--primary);
+    margin: 0 auto 20px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--gray);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-bottom: 3px solid var(--primary);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    padding: 40px 30px;
+    text-align: center;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--primary);
+    transition: var(--transition-slow);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.feature-card:hover::before {
+    height: 100%;
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.feature-card:hover i {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--gray);
+}
+
+/* =========== Routes Section =========== */
+.routes {
+    padding: 100px 0;
+    background-color: var(--light);
+}
+
+.routes .section-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--gray);
+}
+
+.route-categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.route-tab {
+    padding: 12px 30px;
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--gray);
+    box-shadow: var(--shadow);
+}
+
+.route-tab.active, .route-tab:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.routes-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.route-category {
+    display: none;
+}
+
+.route-category.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.route-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.route-number {
+    min-width: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.route-card[data-route="R4"] .route-number {
+    background-color: #00AEEF;
+}
+
+.route-card[data-route="99"] .route-number {
+    background-color: #B3AA8E;
+}
+
+.route-number.train {
+    font-size: 2.5rem;
+}
+
+.route-number.train.millennium {
+    background-color: #FCAD14;
+}
+
+.route-number.train.canada {
+    background-color: #0164AC;
+}
+
+.route-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.route-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.route-info p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.route-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.route-details span {
+    font-size: 0.85rem;
+    color: var(--gray-dark);
+}
+
+.route-details i {
+    color: var(--primary);
+    margin-right: 5px;
+}
+
+/* =========== Featured Sections =========== */
+.featured-sections {
+    padding: 100px 0;
+    background-color: var(--card-bg);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+}
+
+.featured-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.featured-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.featured-content p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: var(--gray);
+}
+
+.featured-image {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-strong);
+}
+
+.featured-image img {
+    transition: var(--transition-slow);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-item:hover .featured-image img {
+    transform: scale(1.05);
+}
+
+/* =========== Team Section =========== */
+.team-section {
+    padding: 100px 0;
+    background-color: var(--card-bg);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.two-person-team {
+    grid-template-columns: repeat(2, minmax(300px, 400px));
+    justify-content: center;
+}
+
+.team-member {
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.member-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-image .social-links {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    transition: var(--transition);
+}
+
+.team-member:hover .member-image .social-links {
+    bottom: 0;
+}
+
+.member-image .social-links a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.member-image .social-links a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: var(--primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.member-info p {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.secondary-header {
+    margin-top: 80px;
+}
+
+.join-team {
+    padding: 80px 0;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.join-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.join-content p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+.join-content .btn-primary {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.join-content .btn-primary:hover {
+    background-color: var(--light);
+}
+
+/* =========== Projects Section =========== */
+.projects-section {
+    padding: 100px 0;
+    background-color: var(--card-bg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.project-image {
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.project-info ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.project-info ul li {
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-features span {
+    padding: 8px 15px;
+    background-color: var(--white);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+}
+
+.project-features i {
+    margin-right: 5px;
+    color: var(--primary);
+}
+
+.tech-projects {
+    background-color: var(--light);
+}
+
+.tech-projects .project-features span {
+    background-color: var(--light);
+}
+
+.tech-projects .project-card {
+    background-color: var(--white);
+}
+
+.tech-projects .project-features i {
+    color: var(--secondary);
+}
+
+/* =========== Future Projects =========== */
+.future-projects {
+    padding: 80px 0;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.future-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.future-content p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+}
+
+.future-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.future-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.future-feature i {
+    font-size: 2.5rem;
+}
+
+.future-feature span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* =========== Footer =========== */
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    margin-bottom: 25px;
+    color: var(--gray-light);
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.footer-column ul li {
+    margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+    color: var(--gray-light);
+    transition: var(--transition);
+}
+
+.footer-column ul li a:hover {
+    color: var(--white);
+    padding-left: 5px;
+}
+
+.footer-column ul li a i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* =========== Animation Classes =========== */
+.reveal-text {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition-slow);
+}
+
+/* =========== Responsive Design =========== */
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+    
+    .feature-cards, .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .featured-item {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-content {
+        order: 1;
+    }
+    
+    .featured-image {
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        margin-left: 0;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links a {
+        color: var(--dark);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .feature-cards, .footer-grid, .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .theme-toggle {
+        margin-right: 10px;
+    }
+    
+    #theme-toggle-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .theme-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Enhanced contrast for section headers and titles in dark mode */
+.dark-mode .section-header h2,
+.dark-mode .featured-content h2,
+.dark-mode .project-info h3,
+.dark-mode .member-info h3 {
+    color: var(--white);
+}
+
+/* Fix for dark mode section backgrounds */
+.dark-mode .about,
+.dark-mode .featured-sections,
+.dark-mode .team-section,
+.dark-mode .projects-section {
+    background-color: var(--bg-color);
+}
+
+/* Fix for hero section in dark mode */
+.dark-mode .hero .overlay,
+.dark-mode .page-hero .overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+}
+
+/* Fix for page hero in dark mode */
+.dark-mode .page-hero {
+    background-color: var(--dark);
+}
+
+/* Fix for join team section in dark mode */
+.dark-mode .join-team {
+    background-color: var(--primary-dark);
+}
+
+.dark-mode .join-content .btn-primary {
+    background-color: var(--light);
+    color: var(--primary-dark);
+}
+
+.dark-mode .join-content .btn-primary:hover {
+    background-color: var(--white);
+}
+
+/* Fix for future projects section in dark mode */
+.dark-mode .future-projects {
+    background-color: var(--primary-dark);
+}
+
+.dark-mode .future-feature span {
+    color: var(--white);
+}
+
+/* Fix for nav links in mobile view */
+@media screen and (max-width: 768px) {
+    .dark-mode nav:not(.scrolled) .nav-links {
+        background-color: rgba(28, 28, 28, 0.9);
+        margin-left: 0 !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+    
+    .dark-mode nav.scrolled .nav-links {
+        background-color: var(--nav-scrolled-bg);
+        margin-left: 0 !important;
+    }
+    
+    .dark-mode .nav-links a {
+        background-color: transparent;
+    }
+}
+
+/* Make the underline visible in dark mode */
+.dark-mode .underline {
+    background-color: var(--primary-light);
+}
+
+/* Better route details contrast in dark mode */
+.dark-mode .route-details span {
+    color: var(--gray-text);
+}
+
+.dark-mode .route-details i {
+    color: var(--primary-light);
+}
+
+/* Footer styles for dark mode */
+.dark-mode footer {
+    background-color: #111;
+}
+
+.dark-mode .footer-column p,
+.dark-mode .footer-bottom p {
+    color: var(--gray-text);
+}
+
+.dark-mode .footer-column ul li a {
+    color: var(--gray-text);
+}
+
+.dark-mode .footer-column ul li a:hover {
+    color: var(--white);
+}
+
+.dark-mode .social-links a {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Fix for team member cards in dark mode */
+.dark-mode .team-member {
+    background-color: var(--card-bg);
+}
+
+.dark-mode .member-role {
+    color: var(--primary-light);
+}
+
+/* Button hover states in dark mode */
+.dark-mode .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+    color: var(--white) !important;
+}
+
+.dark-mode .btn-secondary {
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+}
+
+/* Fix for reveal cards in dark mode so they're visible */
+.dark-mode .reveal-card {
+    background-color: var(--card-bg);
+}
+
+/* Fix for navigation background in dark mode */
+.dark-mode nav {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+
+.dark-mode nav a {
+    color: var(--white);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure the background is consistent when scrolled */
+.dark-mode nav.scrolled {
+    background-color: var(--nav-scrolled-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.dark-mode nav.scrolled a {
+    color: var(--nav-scrolled-text);
+    text-shadow: none;
+}
+
+/* Completely override any possible backgrounds on nav links in dark mode */
+.dark-mode nav .nav-links a:not(.btn-primary),
+.dark-mode nav .nav-links a:not(.btn-primary)::before,
+.dark-mode nav .nav-links a:not(.btn-primary)::after {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.dark-mode nav .nav-links a:not(.btn-primary)::after {
+    height: 2px !important;
+    background-color: var(--secondary) !important;
+    bottom: -5px !important;
+}
+
+/* Fix the active and hover states to only show underline */
+.dark-mode nav a.active:not(.btn-primary)::after, 
+.dark-mode nav a:hover:not(.btn-primary)::after {
+    width: 100% !important;
+    background-color: var(--secondary) !important;
+}
+
+/* Fix for all other CSS effects that might be adding backgrounds */
+.dark-mode nav a:not(.btn-primary),
+.dark-mode nav a:not(.btn-primary):link,
+.dark-mode nav a:not(.btn-primary):visited,
+.dark-mode nav a:not(.btn-primary):hover,
+.dark-mode nav a:not(.btn-primary):active,
+.dark-mode nav a:not(.btn-primary):focus {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure proper text shadow for readability */
+.dark-mode nav:not(.scrolled) .nav-links a:not(.btn-primary) {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Special handling for the Play Now button - match light mode dimensions */
+.dark-mode .btn-primary,
+.dark-mode nav .btn-primary,
+.dark-mode nav .nav-links a.btn-primary {
+    display: inline-block !important;
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    padding: 12px 24px !important;
+    border-radius: 30px !important;
+    box-shadow: var(--shadow) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    transition: var(--transition) !important;
+}
+
+/* Specific override for the nav version of the button */
+.dark-mode nav .nav-links a.btn-primary {
+    padding: 8px 20px !important;
+    margin-left: 10px !important;
+    box-shadow: var(--shadow) !important;
+    border: none !important;
+}
+
+/* Hover state for buttons */
+.dark-mode .btn-primary:hover,
+.dark-mode nav .btn-primary:hover,
+.dark-mode nav .nav-links a.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-strong) !important;
+    color: var(--white) !important;
+}
+
+/* Active class for nav links */
+.dark-mode nav a.active {
+    color: var(--secondary) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Ensure the active underline shows properly */
+.dark-mode nav a.active::after {
+    width: 100% !important;
+    background-color: var(--secondary) !important;
+}
+
+/* Reset box model properties for link elements */
+.dark-mode nav .nav-links a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+/* Fix for the nav-links container itself */
+.dark-mode .nav-links {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Complete overhaul of nav-links styles in dark mode */
+/* I'm trying everything to fix this */
+.dark-mode .nav-right {
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+/* Fix for the nav-links container itself */
+.dark-mode .nav-links {
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-grow: 1 !important;
+    margin-left: 30px !important;
+}
+
+/* Make the gap visible - separate the links more clearly */
+.dark-mode .nav-links a:not(.btn-primary) {
+    position: relative !important;
+    font-weight: 600 !important;
+    color: var(--white) !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+/* Specifically handle the active style */
+.dark-mode .nav-links a.active:not(.btn-primary) {
+    color: var(--secondary) !important;
+}
+
+/* Complete dark mode navigation reset and rebuild */
+.dark-mode nav {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.dark-mode nav.scrolled {
+    background-color: var(--nav-scrolled-bg) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+/* Reset all default styles for each link element */
+.dark-mode nav a,
+.dark-mode nav a:link,
+.dark-mode nav a:visited,
+.dark-mode nav a:hover,
+.dark-mode nav a:active,
+.dark-mode nav a:focus {
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Adjust spacing in nav links to better match design */
+.dark-mode .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    background: transparent !important;
+}
+
+/* Special handling for the Play Now button */
+/* I'm not sure why this is needed but it's a pain in the ass to fix */
+.dark-mode nav .btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    padding: 8px 20px !important;
+    border-radius: 30px !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.dark-mode nav.scrolled .btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Make sure the underline effect works correctly */
+.dark-mode nav a:not(.btn-primary)::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -5px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    background-color: var(--secondary) !important;
+    transition: var(--transition) !important;
+}
+
+.dark-mode nav a.active:not(.btn-primary)::after,
+.dark-mode nav a:hover:not(.btn-primary)::after {
+    width: 100% !important;
+}
+
+/* For scrolled state */
+.dark-mode nav.scrolled a:not(.btn-primary) {
+    color: var(--light) !important;
+    text-shadow: none !important;
+}
+
+/* Text styling for links when at top of page */
+.dark-mode nav:not(.scrolled) a:not(.btn-primary) {
+    color: var(--white) !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Handle active/hover color */
+.dark-mode nav a.active:not(.btn-primary),
+.dark-mode nav a:hover:not(.btn-primary) {
+    color: var(--secondary) !important;
+}
+
+/* Dark mode Play Now button */
+.dark-mode nav .nav-links a.btn-primary,
+.dark-mode nav .nav-right .nav-links a.btn-primary,
+nav.dark-mode .nav-links a.btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    padding: 8px 20px !important;
+    margin-left: 10px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+    box-shadow: var(--shadow) !important;
+    border: none !important;
+    display: inline-block !important;
+    position: relative !important;
+    text-align: center !important;
+    transition: var(--transition) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Reset the pseudo-elements for the button */
+.dark-mode nav .nav-links a.btn-primary::before,
+.dark-mode nav .nav-links a.btn-primary::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Ensure Play Now button in navigation has white text in all modes */
+nav .nav-links a.btn-primary {
+    color: var(--white) !important;
+}
+
+/* Ensure white text color in all contexts */
+a.btn-primary, 
+button.btn-primary,
+input[type="button"].btn-primary,
+input[type="submit"].btn-primary {
+    color: var(--white) !important;
+}
+
+/* FINALLY DONE IM NOT DOING THIS SHIT ANYMORE LETS GO */

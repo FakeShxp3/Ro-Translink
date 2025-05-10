@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | Ro-Translink</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/208c66f94a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/Icons/logo.png" alt="Ro-Translink Logo">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="index.html#routes">Routes</a>
+                <a href="https://www.roblox.com/games/93107702761852/RTL-Ro-Translink" target="_blank" class="btn-primary">Play Now</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <img src="assets/images/Icons/Sun.png" alt="Light Mode" id="theme-icon" class="theme-icon">
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Our Projects</h1>
+            <p class="reveal-text delay-1">The technology and vehicles powering Ro-Translink</p>
+        </div>
+    </section>
+
+    <!-- Vehicle Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vehicle Fleet</h2>
+                <div class="underline"></div>
+                <p>Meticulously modeled transit vehicles with authentic systems and features</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/xcelsior.png" alt="New Flyer: Xcelsior">
+                    </div>
+                    <div class="project-info">
+                        <h3>New Flyer: Xcelsior</h3>
+                        <p>BRUG Industries, a talented bus modelling group, has partnered with P2P Studios to create the most realistic Xcelsior on the Roblox platform. This bus will be operated in Ro-Translink, as well as BRUG's brand new MBTA!</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-cog"></i> Gen2.1 Chassis</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1:1 Scale</span>
+                            <span><i class="fas fa-tachometer-alt"></i> Realistic Physics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/LFR.png" alt="New Flyer: LFR">
+                    </div>
+                    <div class="project-info">
+                        <h3>New Flyer: LFR</h3>
+                        <p>One of the first P2P Projects, the articulated LFR is a collaboration between Suburban, the owner of Halifax Transit, and P2P Studios. This model is one of the best on the platform, and will be in service in P2P's Ro-Translink and Halifax Transit.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-cog"></i> Gen2.1 Chassis</span>
+                            <span><i class="fas fa-vector-square"></i> Articulation</span>
+                            <span><i class="fas fa-bus"></i> 60ft Length</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/D40LF.png" alt="New Flyer: LF">
+                    </div>
+                    <div class="project-info">
+                        <h3>New Flyer: LF</h3>
+                        <p>With the original made by Nike, modified by Suburban, and spec'd by Tzu, this D40LF is a staple in P2P, being the bus that Gen2.1 was developed on. This D40LF will be in-use in Halifax Transit, P2P's Ro-Translink, and P2P's BRT.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-cog"></i> Gen2.1 Chassis</span>
+                            <span><i class="fas fa-history"></i> Legacy Model</span>
+                            <span><i class="fas fa-star"></i> Original Dev Platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Projects Section -->
+    <section class="projects-section tech-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Technologies</h2>
+                <div class="underline"></div>
+                <p>The foundational systems that power the Ro-Translink experience</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/Polaris.png" alt="Project Polaris">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Polaris</h3>
+                        <p>Project Polaris was P2P's first ever project. Anything bus-chassis related falls directly under Polaris - e.g Gen2.1. We have a few buses that currently operate on Gen2.1, the latest update to our chassis: Xcelsior, Orion V, Enviro500, D(E)60LFR, and our D40LF.</p>
+                        <p>Project Polaris stands out as one of the only bus chassis systems in North America featuring an interactive system, realistic engine operations, smooth suspension, and more. Gen2.1 is also incredibly stable and optimized.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Interactive Systems</span>
+                            <span><i class="fas fa-check-circle"></i> Realistic Engine Operation</span>
+                            <span><i class="fas fa-check-circle"></i> Smooth Suspension</span>
+                            <span><i class="fas fa-check-circle"></i> Highly Optimized</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/Sentinel.png" alt="Project Sentinel">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Sentinel</h3>
+                        <p>Project Sentinel is arguably the most technologically advanced and revolutionary product P2P has made. Sentinel includes anything "automation" related. AI Passengers fall under this category, and so does our TMAC!</p>
+                        <p>The underlying system that powers our TMAC includes:</p>
+                        <ul>
+                            <li>A route assembly and managing system that uses purely math and logic to manage stops</li>
+                            <li>A lateness system that uses real-life blocks and scheduling</li>
+                        </ul>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> AI Passengers</span>
+                            <span><i class="fas fa-check-circle"></i> Route Management</span>
+                            <span><i class="fas fa-check-circle"></i> Scheduling System</span>
+                            <span><i class="fas fa-check-circle"></i> TMAC Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/Odyssey.png" alt="Project Odyssey">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Odyssey</h3>
+                        <p>Project Odyssey is the codename for P2P's train chassis. While development is on the backburner until Ro-Translink is fully released with buses, development will pick up when we have enough skytrain stations.</p>
+                        <p>Project Odyssey will be embedded fully into Ro-Translink, making it a multi-operational game. We will have the following trains, running on a hybrid automatic/manual system:</p>
+                        <ul>
+                            <li>Mark 1</li>
+                            <li>Mark 2.0/2.5</li>
+                            <li>Mark 3</li>
+                            <li>Mark 5 (V)</li>
+                        </ul>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> SkyTrain Integration</span>
+                            <span><i class="fas fa-check-circle"></i> Hybrid Control System</span>
+                            <span><i class="fas fa-check-circle"></i> Multiple Train Models</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-card">
+                    <div class="project-image">
+                        <img src="assets/images/Projects/Spectre.png" alt="Project Spectre">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Spectre</h3>
+                        <p>Project Spectre is our cutting-edge experimental initiative focusing on next-generation transit simulation technologies. This project integrates advanced rendering techniques, physics simulation, and AI systems to create the most realistic transit experience possible.</p>
+                        <p>Currently under active development, Spectre will power future versions of our vehicle systems with enhanced visuals, improved performance, and more immersive features.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Advanced Rendering</span>
+                            <span><i class="fas fa-check-circle"></i> Enhanced Physics</span>
+                            <span><i class="fas fa-check-circle"></i> Next-Gen Platform</span>
+                            <span><i class="fas fa-check-circle"></i> Experimental Features</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Projects -->
+    <section class="future-projects">
+        <div class="container">
+            <div class="future-content">
+                <h2>Coming Soon</h2>
+                <p>We're constantly working to expand and improve the Ro-Translink experience. Stay tuned for these upcoming features:</p>
+                <div class="future-features">
+                    <div class="future-feature">
+                        <i class="fas fa-map"></i>
+                        <span>More Map Areas</span>
+                    </div>
+                    <div class="future-feature">
+                        <i class="fas fa-train"></i>
+                        <span>SkyTrain Operation</span>
+                    </div>
+                    <div class="future-feature">
+                        <i class="fas fa-bus"></i>
+                        <span>Additional Bus Models</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="assets/images/logo.png" alt="Ro-Translink Logo" class="footer-logo">
+                    <p>Experience Vancouver's premier transit simulator on Roblox.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/p2p" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.instagram.com/p2p_studios/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@P2PRBLX" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#routes">Routes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/p2p" target="_blank"><i class="fab fa-discord"></i> Join our Discord</a></li>
+                        <li>Join our <a href="https://www.roblox.com/communities/34841485" target="_blank">Roblox group</a>!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 P2P Studios. All Rights Reserved.</p>
+                <p>This is a fan project and is not affiliated with TransLink or any transit authority.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
