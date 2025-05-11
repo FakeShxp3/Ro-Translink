@@ -144,10 +144,17 @@ function initScrollEffects() {
         // Navigation bar background change on scroll
         if (window.scrollY > 100) {
             nav.classList.add('scrolled');
+            nav.classList.remove('at-top');
         } else {
             nav.classList.remove('scrolled');
+            nav.classList.add('at-top');
         }
     });
+    
+    // Add the at-top class initially
+    if (window.scrollY <= 100) {
+        nav.classList.add('at-top');
+    }
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
