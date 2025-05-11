@@ -216,6 +216,7 @@ img {
     transform: translateY(-2px);
     box-shadow: var(--shadow-strong);
     color: var(--white) !important;
+    transition: all 0.3s ease 0s;
 }
 
 .btn-secondary {
@@ -229,6 +230,7 @@ img {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+    transition: all 0.3s ease 0s;
 }
 
 /* =========== Custom Cursor (which is bugged as fuck) =========== */
@@ -1259,6 +1261,12 @@ footer {
     transition-delay: 0.3s;
 }
 
+.cta-buttons .btn-primary:hover,
+.cta-buttons .btn-secondary:hover {
+    transition: var(--transition);
+    transition-delay: 0s !important;
+}
+
 .reveal-card {
     opacity: 0;
     transform: translateY(50px);
@@ -1548,7 +1556,7 @@ footer {
     text-shadow: none;
 }
 
-/* Completely override any possible backgrounds on nav links in dark mode */
+/* Backgrounds for nav links in dark mode */
 .dark-mode nav .nav-links a:not(.btn-primary),
 .dark-mode nav .nav-links a:not(.btn-primary)::before,
 .dark-mode nav .nav-links a:not(.btn-primary)::after {
