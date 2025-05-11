@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize custom cursor
-    initCustomCursor();
-    
     // Initialize animations
     initAnimations();
     
@@ -67,44 +64,6 @@ function initDarkMode() {
             }, 300);
             
         }, 200);
-    });
-}
-
-// Custom Cursor
-function initCustomCursor() {
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-    
-    if (!cursor || !cursorFollower) return;
-    
-    document.addEventListener('mousemove', function(e) {
-        cursor.style.opacity = '1';
-        cursorFollower.style.opacity = '1';
-        
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        cursorFollower.style.left = e.clientX + 'px';
-        cursorFollower.style.top = e.clientY + 'px';
-    });
-    
-    document.addEventListener('mouseout', function() {
-        cursor.style.opacity = '0';
-        cursorFollower.style.opacity = '0';
-    });
-    
-    // Cursor effects on hoverable elements
-    const hoverables = document.querySelectorAll('a, button, .route-card, .team-member, .project-card');
-    hoverables.forEach(hoverable => {
-        hoverable.addEventListener('mouseenter', function() {
-            cursor.style.transform = 'translate(-50%, -50%) scale(0.5)';
-            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        });
-        
-        hoverable.addEventListener('mouseleave', function() {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
     });
 }
 
