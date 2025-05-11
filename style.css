@@ -710,11 +710,11 @@ nav.scrolled .menu-toggle {
 }
 
 .route-card[data-route="R4"] .route-number {
-    background-color: #00AEEF;
+    background-color: #00A950;
 }
 
 .route-card[data-route="99"] .route-number {
-    background-color: #B3AA8E;
+    background-color: #c94f26;
 }
 
 .route-number.train {
