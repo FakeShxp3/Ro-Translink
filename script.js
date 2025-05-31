@@ -16,7 +16,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize dark mode toggle
     initDarkMode();
+    
+    // Wrap buttons in containers to prevent hover flicker
+    wrapButtonsInContainers();
 });
+
+// Wrap buttons in container elements to prevent hover flickering
+function wrapButtonsInContainers() {
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    
+    buttons.forEach(button => {
+        // Skip if already wrapped
+        if (button.parentNode.classList.contains('button-container')) {
+            return;
+        }
+        
+        // Create container
+        const container = document.createElement('div');
+        container.className = 'button-container';
+        
+        // Replace button with container containing the button
+        button.parentNode.insertBefore(container, button);
+        container.appendChild(button);
+    });
+}
 
 // Dark mode functionality
 function initDarkMode() {
