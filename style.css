@@ -244,7 +244,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 126px;
 }
 
 body {
@@ -506,6 +506,78 @@ nav.scrolled .menu-toggle {
     color: var(--text-color);
 }
 
+/* =========== Notice Bar =========== */
+.notice-bar {
+    position: fixed;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0.9);
+    padding: 12px 20px;
+    text-align: center;
+    z-index: 999;
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-bar p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.notice-bar a {
+    color: var(--dark);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.notice-bar a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Dark mode adjustments for notice bar */
+.dark-mode .notice-bar {
+    background-color: rgba(255, 193, 7, 0.85);
+}
+
+.dark-mode .notice-bar p,
+.dark-mode .notice-bar a {
+    color: var(--dark);
+}
+
+.dark-mode .notice-bar a:hover {
+    color: var(--primary-dark);
+}
+
+/* Adjust top positioning when navigation is scrolled */
+nav.scrolled ~ .notice-bar {
+    top: 60px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .notice-bar {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        position: fixed;
+        top: 79px;
+    }
+    
+    .notice-bar p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    nav.scrolled ~ .notice-bar {
+        top: 60px; /* Adjust when scrolled on mobile with no gap */
+    }
+}
+
 /* =========== Hero Section =========== */
 .hero {
     position: relative;
@@ -517,6 +589,7 @@ nav.scrolled .menu-toggle {
     color: var(--white);
     text-align: center;
     overflow: hidden;
+    padding-top: 50px; /* Account for notice bar */
 }
 
 .hero .overlay {
@@ -586,6 +659,7 @@ nav.scrolled .menu-toggle {
     color: var(--white);
     text-align: center;
     background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    margin-top: 50px; /* Account for notice bar */
 }
 
 .page-hero .overlay {
@@ -1392,6 +1466,18 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    html {
+        scroll-padding-top: 126px; /* Adjust for mobile notice bar and navigation with no gap */
+    }
+    
+    .hero {
+        padding-top: 30px; /* Reduce padding on mobile */
+    }
+    
+    .page-hero {
+        margin-top: 30px; /* Reduce margin on mobile */
+    }
+    
     .hero h1 {
         font-size: 3rem;
     }
