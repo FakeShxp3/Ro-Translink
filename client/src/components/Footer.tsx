@@ -1,4 +1,5 @@
 import { SiRoblox, SiDiscord } from "react-icons/si";
+import RoTranslinkLogo from "../images/RoTranslinkLogoBlueBackground.png";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/src/images/RoTranslinkLogoBlueBackground.png" 
+                src={RoTranslinkLogo}
                 alt="Ro-Translink Logo" 
                 className="w-10 h-10 rounded-md object-cover"
               />

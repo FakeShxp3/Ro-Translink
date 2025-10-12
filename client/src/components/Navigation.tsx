@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import RoTranslinkLogo from "../images/RoTranslinkLogoBlueBackground.png";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,8 +29,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2" data-testid="link-home">
             <img 
-              src="/src/images/RoTranslinkLogoBlueBackground.png" 
-              alt="Ro-Translink Logo" 
+              src={RoTranslinkLogo}
+              alt="Ro-Translink Logo"
               className="w-10 h-10 rounded-md object-cover"
             />
             <span className="font-heading font-bold text-xl">Ro-Translink</span>
