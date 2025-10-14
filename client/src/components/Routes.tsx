@@ -56,7 +56,7 @@ export default function Routes() {
 
   const skytrainRoutes = [
     {
-      routeNumber: "M",
+      routeNumber: "E",
       routeName: "Expo Line",
       description: "Waterfront to King George/Production Way-University",
       frequency: "2-12 min",
