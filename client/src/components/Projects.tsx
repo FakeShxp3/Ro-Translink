@@ -21,7 +21,7 @@ interface Project {
 const vehicleFleet: Project[] = [
   {
     name: "New Flyer: Xcelsior",
-    description: "BRUG Industries, a talented bus modelling group, has partnered with P2P Studios to create the most realistic Xcelsior on the Roblox platform. This bus will be operated in Ro-Translink, as well as BRUG's brand new MBTA!",
+    description: "BRUG Industries, a talented bus modelling group, has partnered with P2P Studios to create the most realistic Xcelsior on the Roblox platform. Bus model developed by Teyshaun (@teyshiesty on discord) and the BRUG team.",
     tags: ["Gen2.2 Chassis", "1:1 Scale", "Perfectly Tuned"],
     image: XcelsiorImage
   },
